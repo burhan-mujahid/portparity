@@ -54,13 +54,13 @@ $ cat runs/1/regressions.jsonl          # 111 mismatches, 3 root causes, 3 minim
 
 ## Highlights
 
-|  |  |
+| Feature | What it gives you |
 | --- | --- |
 | 🎯 **Original as oracle** | Expected values come from running the legacy code, never from hand-typed assertions or a model's guess. |
 | 🌐 **Any language pair** | Each side is a command that speaks JSON lines. Templates are included for Python, Node.js, and .NET. |
 | 🔬 **Minimal failures** | Failure-preserving shrinking turns 100 noisy mismatches into one small case per root cause. |
 | 🧪 **A harness that can fail** | Negative controls (planted bugs) must be caught. Nondeterminism is flagged. Oracle crashes are *inconclusive*, never *pass*. |
-| 🛡️ **Agent guardrails** | The skill forbids editing the evidence, loosening comparisons, or accepting differences without your named approval. |
+| 🛡️ **Agent guardrails** | The skill instructs the agent never to edit the evidence, loosen comparisons, or accept a difference without your named approval. |
 | 📦 **Zero dependencies** | One Python 3.10+ file using only the standard library. Nothing to install, and the runner makes no network calls. |
 | 🔒 **Secure by default** | No shell, a scrubbed environment, timeouts that kill whole process groups, size limits, private reports, and escaped output. |
 
