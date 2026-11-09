@@ -1,0 +1,52 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: test (${{ matrix.os }}, Python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ["3.10", "3.12", "3.14"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: "10.0.x"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+      - name: Unit and end-to-end tests
+        run: python -m unittest discover -s tests -v
+      - name: Build the example's legacy C# component
+        working-directory: examples/shipping-fee
+        run: dotnet build original -c Release -o original/out --nologo
+      - name: Example (correct port must pass)
+        working-directory: examples/shipping-fee
+        run: python ../../skills/portparity/scripts/portparity.py run portparity.json --out "$RUNNER_TEMP/good"
+      - name: Example (broken port must fail with exit 1)
+        working-directory: examples/shipping-fee
+        run: |
+          set +e
+          python ../../skills/portparity/scripts/portparity.py run portparity-broken.json --out "$RUNNER_TEMP/bad" --quiet
+          test $? -eq 1

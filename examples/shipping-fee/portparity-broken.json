@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "description": "Legacy C# shipping fee rule (oracle) vs. a wrong JavaScript port, to show a failing run",
+  "original": {"cmd": ["dotnet", "original/out/LegacyShipping.dll"], "mode": "stream",
+               "env": {"DOTNET_CLI_TELEMETRY_OPTOUT": "1", "DOTNET_NOLOGO": "1"}},
+  "replacement": {"cmd": ["node", "broken/adapter.mjs"], "mode": "stream"},
+  "cases": ["cases/fixtures.jsonl", "cases/generated.jsonl"],
+  "env_passthrough": ["DOTNET_ROOT"],
+  "timeout_seconds": 10
+}

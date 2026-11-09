@@ -1,0 +1,12 @@
+{
+  "name": "portparity",
+  "description": "Behavior-preserving code migration with differential testing.",
+  "owner": {"name": "Burhan Mujahid", "url": "https://github.com/burhan-mujahid"},
+  "plugins": [
+    {
+      "name": "portparity",
+      "source": "./",
+      "description": "Run the original and the replacement on the same inputs, shrink mismatches, and report exactly what still differs."
+    }
+  ]
+}

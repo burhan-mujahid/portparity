@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
+# Build output and local runs
+examples/**/out/
+examples/**/obj/
+examples/**/bin/
+parity/runs/
+runs/

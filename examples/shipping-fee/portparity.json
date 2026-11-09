@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "description": "Legacy C# shipping fee rule (oracle) vs. its Python port",
+  "original": {"cmd": ["dotnet", "original/out/LegacyShipping.dll"], "mode": "stream",
+               "env": {"DOTNET_CLI_TELEMETRY_OPTOUT": "1", "DOTNET_NOLOGO": "1"}},
+  "replacement": {"cmd": ["python3", "replacement/adapter.py"], "mode": "stream"},
+  "cases": ["cases/fixtures.jsonl", "cases/generated.jsonl"],
+  "env_passthrough": ["DOTNET_ROOT"],
+  "timeout_seconds": 10,
+  "determinism_runs": 2,
+  "negative_controls": [
+    {"name": "js-port-half-up-rounding", "cmd": ["node", "broken/adapter.mjs"], "mode": "stream"}
+  ]
+}

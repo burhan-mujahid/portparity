@@ -1,0 +1,11 @@
+{"id":"typical-a","input":{"weight_grams":1200,"zone":"A","express":false},"tags":["typical"]}
+{"id":"typical-c-express","input":{"weight_grams":3456,"zone":"C","express":true},"tags":["typical"]}
+{"id":"midpoint-rounds-to-even","input":{"weight_grams":2,"zone":"A","express":false},"tags":["rounding"],"note":"0.005 rounds to 0.00 under banker's rounding"}
+{"id":"midpoint-rounds-up-to-even","input":{"weight_grams":6,"zone":"A","express":false},"tags":["rounding"],"note":"0.015 rounds to 0.02"}
+{"id":"lowercase-padded-zone","input":{"weight_grams":500,"zone":"  b ","express":false},"tags":["zone"]}
+{"id":"unknown-zone","input":{"weight_grams":500,"zone":"Z","express":false},"tags":["zone","error"]}
+{"id":"null-zone","input":{"weight_grams":500,"zone":null,"express":false},"tags":["zone","error"]}
+{"id":"zero-weight","input":{"weight_grams":0,"zone":"A","express":false},"tags":["error"]}
+{"id":"negative-weight","input":{"weight_grams":-1,"zone":"A","express":true},"tags":["error"]}
+{"id":"max-int-weight","input":{"weight_grams":2147483647,"zone":"C","express":true},"tags":["boundary"]}
+{"id":"wrong-type-weight","input":{"weight_grams":"12","zone":"A","express":false},"tags":["input-contract"]}

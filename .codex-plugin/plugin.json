@@ -1,0 +1,23 @@
+{
+  "name": "portparity",
+  "version": "0.1.0",
+  "description": "Behavior-preserving code migration: run the original and the replacement on the same inputs, shrink mismatches, and report exactly what still differs.",
+  "author": {"name": "Burhan Mujahid"},
+  "homepage": "https://github.com/burhan-mujahid/portparity",
+  "repository": "https://github.com/burhan-mujahid/portparity",
+  "license": "MIT",
+  "keywords": ["migration", "modernization", "differential-testing", "legacy", "porting"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "portparity",
+    "shortDescription": "Prove a port behaves like the original, case by case",
+    "longDescription": "Wrap the original and the replacement in small adapters, run both on the same JSON cases, shrink every kind of mismatch to a minimal regression case, and get an evidence report that states exactly what was tested.",
+    "developerName": "Burhan Mujahid",
+    "category": "Coding",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": [
+      "Port this function to Python and use portparity to check it matches the original.",
+      "Use portparity to find where the new implementation differs from the legacy one."
+    ]
+  }
+}

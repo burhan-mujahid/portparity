@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "description": "What is being migrated, from what to what",
+  "original": {"cmd": ["dotnet", "adapters/original/out/Adapter.dll"], "mode": "stream"},
+  "replacement": {"cmd": ["python3", "adapters/replacement/adapter.py"], "mode": "stream"},
+  "cases": ["cases/fixtures.jsonl", "cases/generated.jsonl", "cases/regressions.jsonl"],
+  "timeout_seconds": 10,
+  "determinism_runs": 2,
+  "negative_controls": [
+    {"name": "describe-the-planted-bug", "cmd": ["python3", "adapters/control/adapter.py"], "mode": "stream"}
+  ],
+  "accepted_differences": []
+}

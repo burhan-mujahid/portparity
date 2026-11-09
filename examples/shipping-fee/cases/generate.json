@@ -1,0 +1,20 @@
+{
+  "seed": 20261109,
+  "count": 300,
+  "edge_probability": 0.3,
+  "schema": {
+    "type": "object",
+    "required": ["weight_grams", "zone", "express"],
+    "properties": {
+      "weight_grams": {"type": "integer", "minimum": -5, "maximum": 250000},
+      "zone": {
+        "anyOf": [
+          {"enum": ["A", "B", "C", "a", "b", "c", " A", "c\t", "\u001fB", " C", "﻿A", "Z", ""]},
+          {"type": "string", "maxLength": 3, "x-alphabet": "ABCabcZ \t\u001f  ﻿"},
+          {"type": "null"}
+        ]
+      },
+      "express": {"type": "boolean"}
+    }
+  }
+}
