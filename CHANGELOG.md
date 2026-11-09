@@ -15,4 +15,5 @@ First release.
 - Seeded case generator for a JSON Schema subset, with edge-value bias.
 - Adapter templates for Python, Node.js, and .NET.
 - Example: a legacy C# rule, a correct Python port, and a broken JavaScript port.
-- Claude Code and Codex plugin manifests.
+- Claude Code and Codex plugin manifests with an icon.
+- Project files: README with banner and FAQ, `CITATION.cff`, code of conduct, issue and pull request templates, `llms.txt`.

@@ -1,0 +1,15 @@
+# portparity
+
+> Agent skill (Claude Code, Codex) and dependency-free Python runner for behavior-preserving code migration. It runs the original implementation and its replacement on the same JSON inputs, compares results strictly, shrinks mismatches to minimal regression cases, checks the harness with negative controls, and writes an evidence report. Passing cases are evidence for the tested inputs only, not proof of equivalence. MIT license.
+
+## Docs
+
+- [README](https://github.com/burhan-mujahid/portparity/blob/main/README.md): overview, install, quickstart, FAQ
+- [SKILL.md](https://github.com/burhan-mujahid/portparity/blob/main/skills/portparity/SKILL.md): the agent workflow, guardrails, and exit codes
+- [Adapter protocol](https://github.com/burhan-mujahid/portparity/blob/main/skills/portparity/references/protocol.md): JSON-lines protocol, modes, cross-language encoding, replay adapters
+- [Config and CLI reference](https://github.com/burhan-mujahid/portparity/blob/main/skills/portparity/references/config.md)
+- [Security](https://github.com/burhan-mujahid/portparity/blob/main/SECURITY.md): threat model and mitigations
+
+## Example
+
+- [Legacy C# to Python](https://github.com/burhan-mujahid/portparity/tree/main/examples/shipping-fee): banker's rounding, decimal arithmetic, and .NET whitespace rules; correct and broken ports

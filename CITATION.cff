@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use portparity in research or a migration project, please cite it as below."
+title: "portparity: differential behavior testing for code migration with AI agents"
+abstract: >-
+  portparity is an agent skill for Claude Code and Codex, plus a dependency-free Python runner,
+  for behavior-preserving code migration. It runs an original implementation (the oracle) and its
+  replacement on the same JSON inputs through language-neutral adapters, compares results strictly,
+  shrinks mismatches to minimal regression cases while preserving the failure type, validates the
+  harness with negative controls and determinism checks, and writes an evidence report that states
+  its scope and limitations.
+type: software
+authors:
+  - given-names: Burhan
+    family-names: Mujahid
+    alias: burhan-mujahid
+repository-code: "https://github.com/burhan-mujahid/portparity"
+url: "https://github.com/burhan-mujahid/portparity"
+license: MIT
+version: 0.1.0
+date-released: "2026-11-09"
+keywords:
+  - code migration
+  - legacy modernization
+  - differential testing
+  - characterization testing
+  - golden master testing
+  - test case reduction
+  - behavioral equivalence
+  - AI coding agents
+  - LLM code translation
+  - Claude Code
+  - Codex

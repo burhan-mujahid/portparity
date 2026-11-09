@@ -25,6 +25,9 @@ Measured on macOS (Python 3.14, .NET 10, Node.js 24) on November 9, 2026:
   `{"weight_grams":1,"zone":"","express":false}` (unknown zone falls back to A), and
   `{"zone":""}` (missing input validation).
 
+- A variant of the Python port using plain `str.strip()`: FAIL, 13 mismatches shrunk to
+  `{"express":true,"weight_grams":1,"zone":"\u001fB"}`. Python strips U+001C to U+001F; .NET's `Trim()` does not.
+
 The cases cover the tested inputs only. They show the workflow, not the correctness of any other
 port. While building this example, the runner also exposed a transport hazard: Node's `readline`
 splits lines at U+2028. Requests are now always sent as ASCII-escaped JSON.

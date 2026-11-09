@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-labelledby="t d">
+  <title id="t">portparity</title>
+  <desc id="d">Port legacy code with evidence. Run the original and the replacement on the same inputs and see exactly what still differs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070B18"/>
+      <stop offset="1" stop-color="#101935"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#818CF8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.35" r="0.55">
+      <stop offset="0" stop-color="#6366F1" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#FFFFFF" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="420" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="420" rx="24" fill="url(#grid)"/>
+  <rect width="1280" height="420" rx="24" fill="url(#glow)"/>
+
+  <g font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <rect x="72" y="78" width="356" height="32" rx="16" fill="#2DD4BF" fill-opacity="0.10" stroke="#2DD4BF" stroke-opacity="0.35"/>
+    <text x="250" y="99" text-anchor="middle" font-size="13" font-weight="600" letter-spacing="2" fill="#5EEAD4">AGENT SKILL · CLAUDE CODE · CODEX</text>
+
+    <text x="68" y="196" font-size="84" font-weight="800" letter-spacing="-2" fill="#F8FAFC">port<tspan fill="url(#accent)">parity</tspan></text>
+    <text x="72" y="248" font-size="30" font-weight="600" fill="#E2E8F0">Port legacy code with evidence.</text>
+    <text x="72" y="290" font-size="19" fill="#94A3B8">Run the original and the replacement on the same inputs.</text>
+    <text x="72" y="318" font-size="19" fill="#94A3B8">Shrink every mismatch. Report exactly what still differs.</text>
+    <text x="72" y="364" font-size="15" font-weight="600" fill="#64748B" letter-spacing="0.5">MIT · zero dependencies · any language pair</text>
+  </g>
+
+  <g transform="translate(700 70)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <rect width="510" height="280" rx="16" fill="#0B1222" stroke="#1E293B"/>
+    <circle cx="26" cy="24" r="6" fill="#F87171"/>
+    <circle cx="46" cy="24" r="6" fill="#FBBF24"/>
+    <circle cx="66" cy="24" r="6" fill="#34D399"/>
+    <text x="255" y="29" text-anchor="middle" font-size="13" fill="#64748B">report.md</text>
+    <line x1="0" y1="46" x2="510" y2="46" stroke="#1E293B"/>
+
+    <g font-size="13" fill="#64748B">
+      <text x="24" y="76">case</text>
+      <text x="196" y="76">original</text>
+      <text x="300" y="76">replacement</text>
+    </g>
+    <g font-size="15">
+      <text x="24" y="110" fill="#CBD5E1">typical-a</text>
+      <text x="196" y="110" fill="#E2E8F0">"3.00"</text>
+      <text x="300" y="110" fill="#E2E8F0">"3.00"</text>
+      <text x="486" y="110" text-anchor="end" fill="#34D399">✓ match</text>
+
+      <text x="24" y="146" fill="#CBD5E1">midpoint</text>
+      <text x="196" y="146" fill="#E2E8F0">"0.00"</text>
+      <text x="300" y="146" fill="#FCA5A5">"0.01"</text>
+      <text x="486" y="146" text-anchor="end" fill="#F87171">✗ differs</text>
+
+      <text x="24" y="182" fill="#CBD5E1">unknown-zone</text>
+      <text x="196" y="182" fill="#E2E8F0">error</text>
+      <text x="300" y="182" fill="#FCA5A5">"1.25"</text>
+      <text x="486" y="182" text-anchor="end" fill="#F87171">✗ differs</text>
+    </g>
+    <line x1="24" y1="204" x2="486" y2="204" stroke="#1E293B" stroke-dasharray="4 4"/>
+    <text x="24" y="234" font-size="13" fill="#64748B">smallest failing input</text>
+    <text x="24" y="258" font-size="15" fill="url(#accent)">{"express":false,"weight_grams":2,"zone":"A"}</text>
+  </g>
+</svg>

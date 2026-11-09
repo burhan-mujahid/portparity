@@ -2,9 +2,20 @@
   "name": "portparity",
   "description": "Behavior-preserving code migration: run the original and the replacement on the same inputs, shrink mismatches, and report exactly what still differs.",
   "version": "0.1.0",
-  "author": {"name": "Burhan Mujahid", "url": "https://github.com/burhan-mujahid"},
+  "author": {
+    "name": "Burhan Mujahid",
+    "url": "https://github.com/burhan-mujahid"
+  },
   "license": "MIT",
   "homepage": "https://github.com/burhan-mujahid/portparity",
   "repository": "https://github.com/burhan-mujahid/portparity",
-  "keywords": ["migration", "modernization", "differential-testing", "legacy", "porting", "skill"]
+  "keywords": [
+    "migration",
+    "modernization",
+    "differential-testing",
+    "legacy",
+    "porting",
+    "skill"
+  ],
+  "icon": "./assets/icon.png"
 }

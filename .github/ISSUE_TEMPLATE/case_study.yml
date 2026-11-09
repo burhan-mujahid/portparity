@@ -1,0 +1,18 @@
+name: Migration case study
+description: Share a migration you checked with portparity (languages, cases, what it found)
+labels: [case-study]
+body:
+  - type: input
+    id: pair
+    attributes:
+      label: From and to
+      placeholder: "C# (.NET Framework 4.8) to Python 3.12"
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Results
+      description: Number of cases, mismatches found, notable bugs, time spent. Share only what you are allowed to share.
+    validations:
+      required: true
